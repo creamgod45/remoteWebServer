@@ -1,0 +1,108 @@
+.menu {
+    position: sticky;
+    top: 0;
+    padding: 8px;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    border-bottom: 1px rgba(27, 27, 27, 0.15) solid;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+    background: #0F2027;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+    a {
+        color: white;
+    }
+
+    .border {
+        width: 1px;
+        height: 20px;
+        border: 1px black solid;
+        margin: 0px 8px;
+    }
+
+    img {
+        border-radius: 3em;
+        margin-right: 8px;
+    }
+
+    .menu-item {
+        width: fit-content;
+        height: 28px;
+        padding: 4px 8px;
+        margin: 0px 8px;
+        background-color: #0380ba;
+        border-radius: 2em;
+        display: flex;
+
+        .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            align-content: center;
+            width: 18px;
+            height: 18px;
+        }
+
+        .name {
+            margin-left: 8px;
+            line-height: 19px;
+        }
+    }
+
+    .menu-item:hover {
+        opacity: 0.8;
+    }
+}
+
+.menu2-panel ,.menu2-toggle  {
+    top: 16px;
+    z-index: 990;
+    border-bottom: 1px rgba(27, 27, 27, 0.15) solid;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+    padding: 8px;
+    align-items: center;
+    justify-content: center;
+    background: #0F2027;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+    .border {
+        width: 32px;
+        height: 4px;
+        background: #dee2e6;
+    }
+
+    .item {
+        width: 48px;
+        height: 48px;
+        align-items: center;
+        justify-content: center;
+
+        .icon {
+            position: relative;
+
+            .show-text {
+                display: none;
+                position: absolute;
+                bottom: 0px;
+                left: 42px;
+                min-width: 48px;
+                width: fit-content;
+                background: #0a58ca;
+                border: #0a58ca 1px solid;
+                transition-delay: 1s;
+                word-break: keep-all;
+                padding: 0px 8px;
+            }
+        }
+    }
+
+    .item:hover .show-text {
+        display: inline-block;
+        transition-delay: 1s;
+    }
+}

@@ -1,0 +1,47 @@
+.cgcard {
+  height: fit-content;
+  max-height: 400px;
+  padding: 16px 16px;
+  border-radius: 1em;
+  background-color: #ffffff;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.tab1 #pills-tabContent {
+  min-height: 500px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+.tab1 #pills-tabContent .table-top {
+  z-index: 980;
+  background: gray;
+  margin-bottom: unset;
+}
+
+#ban {
+  background-image: linear-gradient(135deg, #FEB692 10%, #EA5455 100%);
+}
+
+#update {
+  background-image: linear-gradient(135deg, #81FBB8 10%, #28C76F 100%);
+}
+
+#post {
+  background-image: linear-gradient(135deg, #43CBFF 10%, #9708CC 100%);
+}
+
+#predict {
+  background-image: linear-gradient(135deg, #FD6E6A 10%, #FFC600 100%);
+}
+
+.scroll-x {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.scroll-y {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/*# sourceMappingURL=@Home.css.map */

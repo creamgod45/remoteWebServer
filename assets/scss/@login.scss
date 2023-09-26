@@ -1,0 +1,15 @@
+.login-panel{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 80vh;
+  .panel{
+    padding: 8px 16px;
+    border-radius: 1em;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+    h1 {
+      text-align: center;
+    }
+  }
+}
