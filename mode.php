@@ -16,11 +16,11 @@ $mode = fs::read('mode');
 
 
 $member_unserialize = $Request->SESSION('member', true)->Get();
-if(!is_bool($member_unserialize)){
+if (!is_bool($member_unserialize)) {
     $member = new Member();
     $member->setArray($member_unserialize);
 
-    if($mode !== 'enable' && $member->isAdministrator()){
+    if ($mode !== 'enable' && $member->isAdministrator()) {
         echo "<h5>目前你已經繞過這個模式系統，因為你是管理員。</h5>";
         if ($mode === 'maintenance') {
             echo('<p>[維護模式]將在維護完成後開放網站系統</p>');

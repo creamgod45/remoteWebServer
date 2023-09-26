@@ -13,19 +13,19 @@ class GET
         $this->ignore_key_missing = $ignore_key_missing;
     }
 
-    public function Get($filter=true)
+    public function Get($filter = true)
     {
         if (empty($this->key)) return $_GET;
         if ($this->ignore_key_missing) {
             if (@!empty($_GET[$this->key])) {
-                if($filter)
+                if ($filter)
                     return htmlentities($_GET[$this->key]);
                 else
                     return $_GET[$this->key];
             }
             return null;
         } else {
-            if($filter)
+            if ($filter)
                 return htmlentities($_GET[$this->key]);
             else
                 return $_GET[$this->key];

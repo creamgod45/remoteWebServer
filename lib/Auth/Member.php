@@ -149,7 +149,7 @@ class Member
 
     public function setArray($array = [])
     {
-        if(empty($array)) return $this;
+        if (empty($array)) return $this;
         $this->id = $array["id"];
         $this->uid = $array["uid"];
         $this->username = $array["username"];

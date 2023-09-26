@@ -16,7 +16,8 @@ $Request->HEADER()->Add("Access-Control-Allow-Headers: *");
 $Request->HEADER()->JSON_FILE();
 
 $raw_json = file_get_contents('php://input');
-function menu(){
+function menu()
+{
     return (new Htmlv2("div"))
         ->close(true)
         ->newLine(true)
@@ -27,7 +28,7 @@ function menu(){
                 ->close(true)
                 ->newLine(true)
                 ->body("選單")
-                ->build().
+                ->build() .
             (new Htmlv2("div"))
                 ->close(true)
                 ->newLine(true)
@@ -38,23 +39,23 @@ function menu(){
                         ->newLine(true)
                         ->attr("class", "btn btn-success shadow-lg p2 m-1")
                         ->attr("style", "width:128px;height:128px;border-radius:unset;")
-                        ->attr("onclick","scopePage('index');")
+                        ->attr("onclick", "scopePage('index');")
                         ->body("<i class=\"fa-solid fa-house\"></i>&nbsp;首頁")
-                        ->build().
+                        ->build() .
                     (new Htmlv2("button"))
                         ->close(true)
                         ->newLine(true)
                         ->attr("class", "btn btn-warning shadow-lg p2 m-1")
                         ->attr("style", "width:128px;height:128px;border-radius:unset;")
-                        ->attr("onclick","scopePage('folder');")
+                        ->attr("onclick", "scopePage('folder');")
                         ->body("<i class=\"fa-solid fa-folder\"></i>&nbsp;文件")
-                        ->build().
+                        ->build() .
                     (new Htmlv2("button"))
                         ->close(true)
                         ->newLine(true)
                         ->attr("class", "btn btn-primary shadow-lg p2 m-1")
                         ->attr("style", "width:128px;height:128px;border-radius:unset;")
-                        ->attr("onclick","scopePage('download');")
+                        ->attr("onclick", "scopePage('download');")
                         ->body("<i class=\"fa-solid fa-download\"></i>&nbsp;下載")
                         ->build()
                 )
@@ -62,6 +63,7 @@ function menu(){
         )
         ->build();
 }
+
 try {
     $cgarray = new CGArray(Json::decode($raw_json, Json::FORCE_ARRAY));
     $page = $cgarray->Get("page");
@@ -71,7 +73,7 @@ try {
             ->newLine(true)
             ->attr("class", "app container")
             ->body(
-                menu().
+                menu() .
                 (new Htmlv2("div"))
                     ->close(true)
                     ->newLine(true)
@@ -85,7 +87,7 @@ try {
             ->newLine(true)
             ->attr("class", "app container")
             ->body(
-                menu().
+                menu() .
                 (new Htmlv2("div"))
                     ->close(true)
                     ->newLine(true)
@@ -116,7 +118,7 @@ try {
 echo json_encode($raw);
 FileSystem::write("log/" . time() . "_log_api", Json::encode([
     "Headers" => $Request->HEADERS(),
-    "php://input" =>file_get_contents('php://input'),
+    "php://input" => file_get_contents('php://input'),
     "Requests" => $Request->Request()->Get(),
     "POST" => $Request->POST()->Get(),
     "GET" => $Request->GET()->Get(),

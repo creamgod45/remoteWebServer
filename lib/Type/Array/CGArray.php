@@ -2,8 +2,6 @@
 
 namespace Type\Array;
 
-use Utils\Utils;
-
 require_once 'lib/Type/Array/CGArrayInterface.php';
 require_once 'lib/Type/Array/CGPathInterface.php';
 require_once 'lib/Type/Array/CGPath.php';
@@ -39,11 +37,38 @@ class CGArray implements CGArrayInterface
     /**
      * 搬移陣列中的參數至新的參數
      */
-    public function shiftKeytoNewKey($oldKey, $newKey,bool $deleteold=true){
-        if($this->IsEmpty()) return false;
+    public function shiftKeytoNewKey($oldKey, $newKey, bool $deleteold = true)
+    {
+        if ($this->IsEmpty()) return false;
         $this->Set($newKey, $this->Get($oldKey));
-        if($deleteold){
+        if ($deleteold) {
             $this->Delete($oldKey, true);
+        }
+    }
+
+    public function IsEmpty(): bool
+    {
+        return empty($this->array);
+    }
+
+    public function Set($key, $Mixed): void
+    {
+        $this->array[$key] = $Mixed;
+    }
+
+    public function Get($Index)
+    {
+        // TODO: Implement get() method.
+        return $this->array[$Index];
+    }
+
+    public function Delete($Key, $force = false)
+    {
+        if ($force) {
+            unset($this->array[$Key]);
+        } else {
+            if (empty($this->array[$Key])) return;
+            unset($this->array[$Key]);
         }
     }
 
@@ -76,24 +101,10 @@ class CGArray implements CGArrayInterface
         $this->array[] = $Mixed;
     }
 
-    public function Set($key, $Mixed): void
-    {
-        $this->array[$key] = $Mixed;
-    }
-
     public function AddCallBack($Mixed): CGArray
     {
         $this->array[] = $Mixed;
         return $this;
-    }
-
-    public function Delete($Key, $force=false){
-        if($force){
-            unset($this->array[$Key]);
-        }else{
-            if(empty($this->array[$Key])) return;
-            unset($this->array[$Key]);
-        }
     }
 
     public function Remove($Index): void
@@ -107,11 +118,6 @@ class CGArray implements CGArrayInterface
         return $this;
     }
 
-    public function IsEmpty(): bool
-    {
-        return empty($this->array);
-    }
-
     public function IndexOf($Value): bool|int|string
     {
         return array_search($Value, $this->array, true);
@@ -123,14 +129,8 @@ class CGArray implements CGArrayInterface
      */
     public function GetValuetoCGArray($Index): bool|CGArray
     {
-        if(!is_array($this->array[$Index])) return false;
+        if (!is_array($this->array[$Index])) return false;
         return new CGArray($this->array[$Index]);
-    }
-
-    public function Get($Index)
-    {
-        // TODO: Implement get() method.
-        return $this->array[$Index];
     }
 
     public function Contains($Mixed): bool

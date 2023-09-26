@@ -1,0 +1,10 @@
+/lib/core/
+vendor/
+database/
+test
+test.php
+xampp.bat
+composer.lock
+.idea/
+temp/
+log/

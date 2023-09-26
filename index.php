@@ -48,7 +48,7 @@ try {
     if (router(1) !== 'api') {
         Debugger::enable();
     }
-   // Debugger::enable();
+    // Debugger::enable();
     $Config = require "config.php";
     $Utils = new Utils();
     $Request = new Request();
@@ -80,4 +80,4 @@ if (@!empty($Utils->files())) $Utils->pinv($Utils->files(), '_FILES');
 ob_end_flush();
 session_write_close();
 $end = microtime(true);
-$Utils->pinv(number_format((($end-$start)* 1000),2)." ms", "網頁執譯器運行時間: 單位(ms)");
+$Utils->pinv(number_format((($end - $start) * 1000), 2) . " ms", "網頁執譯器運行時間: 單位(ms)");

@@ -139,19 +139,19 @@ class Request_internal
         $this->ignore_key_missing = $ignore_key_missing;
     }
 
-    public function Get($filter=true)
+    public function Get($filter = true)
     {
         if (empty($this->key)) return $_REQUEST;
         if ($this->ignore_key_missing) {
             if (@!empty($_REQUEST[$this->key])) {
-                if($filter)
+                if ($filter)
                     return htmlentities($_REQUEST[$this->key]);
                 else
                     return $_REQUEST[$this->key];
             }
             return null;
         } else {
-            if($filter)
+            if ($filter)
                 return htmlentities($_REQUEST[$this->key]);
             else
                 return $_REQUEST[$this->key];

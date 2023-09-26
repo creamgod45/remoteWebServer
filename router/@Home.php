@@ -1,8 +1,5 @@
 <?php
 
-use Utils\HTML;
-use Utils\Htmlv2;
-
 /**
  * @var Utils\Utils $Utils
  * @var Server\Request $Request
@@ -14,5 +11,5 @@ $assets = [];
 $content = "@Home.php";
 $footer = "";
 $script = '';
-$menu = true;
+$menu = false;
 include_once "templates/layout.php";
