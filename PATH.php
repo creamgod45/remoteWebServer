@@ -23,7 +23,7 @@ if (!function_exists('f1')) {
 
 if (f1(true, true)[0] === 'https://') {
     if (!defined('PATH')) {
-        define('PATH', '/home/vulsdril/chat.zeitfrei.tw');
+        define('PATH', '/path/to/dir/folder');
     }
 } else {
     if (!defined('PATH')) {
